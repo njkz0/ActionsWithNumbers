@@ -9,6 +9,8 @@ public class MainClass {
 
         System.out.println("Summa otdelnih cifr iz chisla = "+Actions.sumOfIndividualNumbersWithReminder(a));
         System.out.println("Summa otdelnih cifr iz chisla = "+Actions.sumOfIndividualNumbersWithChar(a));
+
+        Actions.maxPalindromeSearchInFourDigitNumber();
     }
 
 }

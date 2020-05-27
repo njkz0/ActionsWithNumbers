@@ -1,5 +1,9 @@
 package actions;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Actions {
 
     public static int sumOfIndividualNumbersWithReminder(int input) {
@@ -23,18 +27,35 @@ public class Actions {
 
 
     public static void maxPalindromeSearchInFourDigitNumber() {//аргументы - диапазон чисел
-       int maxPalindrome=0;
+
+       List<Integer> listPalnidrome= new ArrayList<>();
         for (int i = 1000; i <=9999 ; i++) {
             for (int j = 1000; j <=9999 ; j++) {
                 int multiplicationResult=i*j;
                 String sMultiplicationResult= Integer.toString(multiplicationResult);
                 String reverseSMultiplicationResult= new StringBuilder(sMultiplicationResult).reverse().toString();
                 if(sMultiplicationResult.equals(reverseSMultiplicationResult)){
-                    maxPalindrome=Integer.parseInt(sMultiplicationResult);
+                    listPalnidrome.add(multiplicationResult);
                 }
             }
         }
-        System.out.println("Max palindrome - " + maxPalindrome);
+        int size = listPalnidrome.size();
+        Collections.sort(listPalnidrome);
+        System.out.println("Max palindrome - " + listPalnidrome.get(size-1));
+
     }
 
+  //public static void maxPalindromeSearchInFourDigitNumber() {//аргументы - диапазон чисел
+  //    int maxPalindrome=0;
+  //    for (int i = 1000; i <=9999 ; i++) {
+  //        for (int j = 1000; j <=9999 ; j++) {
+  //            int multiplicationResult=i*j;
+  //            String sMultiplicationResult= Integer.toString(multiplicationResult);
+  //            String reverseSMultiplicationResult= new StringBuilder(sMultiplicationResult).reverse().toString();
+  //            if(sMultiplicationResult.equals(reverseSMultiplicationResult)){
+  //                maxPalindrome=Integer.parseInt(sMultiplicationResult);
+  //            }
+  //        }
+  //    }
+  //    System.out.println("Max palindrome - " + maxPalindrome);
 }
